@@ -8,52 +8,53 @@ Choose `UEFI` with no secure boot
 sudo -i
 ```
 
-![](nixos-parted.png "")
-
 ```sh
 parted /dev/vda -- mklabel gpt
 parted /dev/vda -- mkpart primary 512MiB -8GiB
 parted /dev/vda -- mkpart primary linux-swap -8GiB 100%
 ```
 
-# Formatting
-![](nixos-formatting.png "")
+![](nixos-parted.png "")
 
+# Formatting
 ```sh
 mkfs.ext4 -L nixos /dev/vda1
 mkswap -L swap /dev/vda2
 mkfs.fat -F 32 -n boot /dev/vda3
 ```
 
-# Mounting
-![](nixos-installing.png "")
+![](nixos-formatting.png "")
 
+# Mounting
 ```sh
 mount /dev/disk/by-label/nixos /mnt
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/vda2
 ```
 
-# Configuring
-![](nixos-config.png "")
-![](nixos-config-2.png "")
+![](nixos-installing.png "")
 
+# Configuring
 ```sh
 nixos-generate-config --root /mnt
 vi /mnt/etc/nixos/configuration.nix
 ```
 
-# Installing
-![](nixos-install.png "")
+![](nixos-config.png "")
+![](nixos-config-2.png "")
 
+# Installing
 ```sh
 nixos-install
 ```
 
-# Success
-![](nixos-install-finish.png "")
+![](nixos-install.png "")
 
+# Success
+Install finish reboot into the newly installed NixOS
 ```sh
 reboot
 ```
+
+![](nixos-install-finish.png "")
 
