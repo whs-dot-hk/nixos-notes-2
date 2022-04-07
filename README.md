@@ -58,5 +58,18 @@ reboot
 
 ![](nixos-install-finish.png "")
 
+# Install Vim
+Add the line to `configuration.nix`
+```
+environment.systemPackages = with pkgs; [ vim ];
+```
+Run
+```sh
+nixos-rebuild switch
+```
+
+![](install-vim.png "")
+
 # Reference
-https://nixos.org/manual/nixos/stable/index.html#ch-installation
+* https://nixos.org/manual/nixos/stable/index.html#ch-installation
+* https://nixos.wiki/wiki/Vim
