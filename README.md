@@ -58,3 +58,5 @@ reboot
 
 ![](nixos-install-finish.png "")
 
+# Reference
+https://nixos.org/manual/nixos/stable/index.html#ch-installation
