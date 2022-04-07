@@ -42,6 +42,8 @@ vi /mnt/etc/nixos/configuration.nix
 nixos-install
 ```
 
+![](nixos-install-finish.png "")
+
 ```sh
 reboot
 ```
