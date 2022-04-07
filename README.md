@@ -58,6 +58,14 @@ reboot
 
 ![](nixos-install-finish.png "")
 
+# Add User
+```sh
+useradd -m whs
+passwd whs
+```
+
+![](nixos-useradd.png "")
+
 # Install Vim
 Add the line to `configuration.nix`
 ```
